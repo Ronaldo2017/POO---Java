@@ -1,5 +1,8 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aluno {
 
 	// atributos da classe
@@ -14,15 +17,8 @@ public class Aluno {
 	private String nomeEscola;
 	private String serieMatriculado;
 	
-	private Disciplina disciplina = new Disciplina();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
-	
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
 	
 
 	/*
@@ -30,6 +26,14 @@ public class Aluno {
 	 * 
 	 * set é para adicionar ou receber dados para os atributos
 	 */
+
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
 
 	public Aluno() {
 		// cria os dados na memoria = Padrao
@@ -123,8 +127,12 @@ public class Aluno {
 	
 
 	public double getMediaNota() {
-		return (disciplina.getN1() + disciplina.getN2() + disciplina.getN3()
-		+ disciplina.getN4()) / 4;
+		double somaNota = 0.0;	
+		//instancia a classe     essa é a lista
+		for (Disciplina disciplina : disciplinas) {
+			somaNota += disciplina.getN();
+		}
+		return somaNota / disciplinas.size();
 	}
 	
 	
@@ -157,7 +165,7 @@ public class Aluno {
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + ", rg=" + rg + ", cpf=" + cpf
 				+ ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula + ", nomeEscola="
-				+ nomeEscola + ", serieMatriculado=" + serieMatriculado + ", disciplina=" + disciplina + "]";
+				+ nomeEscola + ", serieMatriculado=" + serieMatriculado + "]";
 	}
 
 	@Override
