@@ -14,51 +14,38 @@ public class PrimeiraClasseJava {
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno");
 		String idade = JOptionPane.showInputDialog("Qual a idade do aluno");
-		String rg = JOptionPane.showInputDialog("Qual o RG do aluno");
-		String cpf = JOptionPane.showInputDialog("Qual o CPF do aluno");
-		String mae = JOptionPane.showInputDialog("Qual Nome da Mãe do aluno");
-		String pai = JOptionPane.showInputDialog("Qual nome do Pai do aluno");
-		String matricula = JOptionPane.showInputDialog("Qual data da matrícula do aluno");
-		String nascimento = JOptionPane.showInputDialog("Qual Data de nascimento do aluno");
-		String serie = JOptionPane.showInputDialog("Qual a serie matriculado do aluno");
+//		String rg = JOptionPane.showInputDialog("Qual o RG do aluno");
+//		String cpf = JOptionPane.showInputDialog("Qual o CPF do aluno");
+//		String mae = JOptionPane.showInputDialog("Qual Nome da Mãe do aluno");
+//		String pai = JOptionPane.showInputDialog("Qual nome do Pai do aluno");
+//		String matricula = JOptionPane.showInputDialog("Qual data da matrícula do aluno");
+//		String nascimento = JOptionPane.showInputDialog("Qual Data de nascimento do aluno");
+//		String serie = JOptionPane.showInputDialog("Qual a serie matriculado do aluno");
 		
 		//instanciando o objeto
 		Aluno aluno1 = new Aluno();
 		
 		aluno1.setNome(nome);
 		aluno1.setIdade(Integer.valueOf(idade));
-		aluno1.setDataNasc(nascimento);
-		aluno1.setDataMatricula(matricula);
-		aluno1.setRg(rg);
-		aluno1.setCpf(cpf);
-		aluno1.setNomeMae(mae);
-		aluno1.setNomePai(pai);
-		aluno1.setSerieMatriculado(serie);
+//		aluno1.setDataNasc(nascimento);
+//		aluno1.setDataMatricula(matricula);
+//		aluno1.setRg(rg);
+//		aluno1.setCpf(cpf);
+//		aluno1.setNomeMae(mae);
+//		aluno1.setNomePai(pai);
+//		aluno1.setSerieMatriculado(serie);
 		
-		//percorrendo lista
-		Disciplina disciplina1 = new Disciplina();
-		disciplina1.setDisciplina("Java");
-		disciplina1.setN(90);
-		
-		Disciplina disciplina2 = new Disciplina();
-		disciplina1.setDisciplina("Python");
-		disciplina1.setN(85);
-		
-		
-		Disciplina disciplina3 = new Disciplina();
-		disciplina1.setDisciplina("Html");
-		disciplina1.setN(95);
-		
-		
-		Disciplina disciplina4 = new Disciplina();
-		disciplina1.setDisciplina("JavaWeb");
-		disciplina1.setN(75);
-		
-		
-		aluno1.getDisciplinas().add(disciplina1);
-		aluno1.getDisciplinas().add(disciplina2);
-		aluno1.getDisciplinas().add(disciplina3);
-		aluno1.getDisciplinas().add(disciplina4);
+		//dinamica das diciplinas
+		for(int pos = 1; pos <= 2;pos++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da Disciplina " + pos);
+			String notaDisciplina = JOptionPane.showInputDialog("Nota da Disciplina " + pos);
+			
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setN(Double.valueOf(notaDisciplina));
+			
+			aluno1.getDisciplinas().add(disciplina);
+		}
 	
 
 		//Aluno aluno = new Aluno();
