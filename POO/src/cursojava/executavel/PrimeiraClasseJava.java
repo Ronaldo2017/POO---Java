@@ -46,12 +46,26 @@ public class PrimeiraClasseJava {
 			
 			aluno1.getDisciplinas().add(disciplina);
 		}
-	
+		
+		//removendo disciplina
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+		if(escolha == 0) {//opcao sim = 0
+			int continuarRemover = 0;
+			int posicao = 1;
+			while(continuarRemover == 0) {
+				String removerDisciplina = JOptionPane.showInputDialog("Qual disciplina 1, 2, 3 ou 4 ?");
+				aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - posicao);
+				posicao ++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover ?");
+			}
+			
+		}
 
 		//Aluno aluno = new Aluno();
 		System.out.println(aluno1.toString());//descrição do objeto na memoria
 		System.out.println("Media: " + aluno1.getMediaNota());
-		System.out.println("Resultado: " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+//		System.out.println("Resultado: " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+		System.out.println("Resultado: " + (aluno1.getAlunoAprovado2()));
 
 
 	}

@@ -16,10 +16,8 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
+
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
-	
-	
 
 	/*
 	 * get é para resagater ou obter o valor do atributo
@@ -124,20 +122,15 @@ public class Aluno {
 		this.serieMatriculado = serieMatriculado;
 	}
 
-	
-
 	public double getMediaNota() {
-		double somaNota = 0.0;	
-		//instancia a classe     essa é a lista
+		double somaNota = 0.0;
+		// instancia a classe essa é a lista
 		for (Disciplina disciplina : disciplinas) {
 			somaNota += disciplina.getN();
 		}
 		return somaNota / disciplinas.size();
 	}
-	
-	
 
-	
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
 		if (media >= 70) {
@@ -146,9 +139,21 @@ public class Aluno {
 			return false;
 		}
 	}
+	
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNota();
+		if(media >= 50) {
+			if(media >= 70) {
+				return "Aprovado";
+			}else {
+				return "Recuperação";
+			}
+		}else {
+			return "Reprovado";
+		}
+	}
 
 	/* representa os dados do objeto toString */
-
 
 	@Override
 	public int hashCode() {
@@ -159,13 +164,11 @@ public class Aluno {
 		return result;
 	}
 
-	
-
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + ", rg=" + rg + ", cpf=" + cpf
 				+ ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula + ", nomeEscola="
-				+ nomeEscola + ", serieMatriculado=" + serieMatriculado + "]";
+				+ nomeEscola + ", serieMatriculado=" + serieMatriculado + ", disciplinas=" + disciplinas + "]";
 	}
 
 	@Override
