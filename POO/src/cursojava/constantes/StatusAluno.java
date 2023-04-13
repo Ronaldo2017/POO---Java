@@ -1,6 +1,6 @@
 package cursojava.constantes;
 
-//classe e constatntes staticas
+//classe e constantes staticas
 public class StatusAluno {
 	
 	public static String APROVADO = "Aprovado";

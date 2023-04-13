@@ -5,20 +5,15 @@ import java.util.List;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
 	// atributos da classe
-	private String nome;
-	private int idade;
-	private String dataNasc;
-	private String rg;
-	private String cpf;
-	private String nomeMae;
-	private String nomePai;
+
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
 
+	// lista de disciplinas
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	/*
@@ -141,16 +136,16 @@ public class Aluno {
 			return false;
 		}
 	}
-	
+
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		if(media >= 50) {
-			if(media >= 70) {
+		if (media >= 50) {
+			if (media >= 70) {
 				return StatusAluno.APROVADO;
-			}else {
+			} else {
 				return StatusAluno.RECUPERACAO;
 			}
-		}else {
+		} else {
 			return StatusAluno.REPROVADO;
 		}
 	}
