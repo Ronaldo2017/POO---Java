@@ -1,6 +1,7 @@
 package cursojava.classes;
 
-public class Pessoa {
+/*Utilizando herança*/
+public abstract class Pessoa {
 
 	protected String nome;
 	protected int idade;
@@ -53,5 +54,7 @@ public class Pessoa {
 		this.nomePai = nomePai;
 	}
 	
-	
+	public boolean maiorIdade() {
+		return idade >= 18;
+	}
 }

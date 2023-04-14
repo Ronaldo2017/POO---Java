@@ -190,4 +190,17 @@ public class Aluno extends Pessoa {
 		return true;
 	}
 
+	/*
+		@Override =  sobreescrita do metodo = maiorIdade
+		que esta na classe pai(Pessoa)
+	*/
+	@Override
+	public boolean maiorIdade() {
+		return idade >= 20;
+	}
+
+	public String msgMaiorIdade() {
+		return this.maiorIdade() ? "Já é maior de idade" : "Não é maior de idade";
+	}
+
 }
