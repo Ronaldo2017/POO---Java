@@ -1,10 +1,24 @@
 package cursojava.classes;
 
-public class Secretario extends Pessoa {
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {
 
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
+
+	private String login;
+	private String senha;
+
+	public Secretario(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+	}
+
+	public Secretario() {
+
+	}
 
 	public String getRegistro() {
 		return registro;
@@ -36,7 +50,24 @@ public class Secretario extends Pessoa {
 				+ ", nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + ", rg=" + rg + ", cpf=" + cpf
 				+ ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
-	
-	
+
+	@Override
+	public double salario() {
+
+		return 3.560 * 0.9;
+	}
+
+	// metodo do contrato de autenticacao
+	@Override
+	public boolean autenticar(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
+	}
+
+	@Override
+	public boolean autenticar() {
+		return login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin");
+	}
 
 }

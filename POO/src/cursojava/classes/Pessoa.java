@@ -1,6 +1,12 @@
 package cursojava.classes;
 
-/*Utilizando herança*/
+/*Utilizando herança
+ * 
+ * abstract = não deixa o objeto ser instanciado
+ * 
+ * metodo abstrato = é obrigatorio reescrever nas classes filhas
+ * 
+ * */
 public abstract class Pessoa {
 
 	protected String nome;
@@ -10,6 +16,10 @@ public abstract class Pessoa {
 	protected String cpf;
 	protected String nomeMae;
 	protected String nomePai;
+	
+	//metodo abstrato é que fica na classe pai
+	//é obrigatorio para as classe filhas implementarem
+	public abstract double salario();
 	
 	public String getNome() {
 		return nome;

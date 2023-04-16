@@ -7,8 +7,12 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 
@@ -20,7 +24,11 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 
-		if (login.equalsIgnoreCase("admin")  && senha.equalsIgnoreCase("admin")) {
+		/*
+		 * Trava o contrato para autorizar somente quem realmente pode ter acesso ao
+		 * sistema
+		 */
+		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()){
 
 			// lista de aluno de adicionados
 			List<Aluno> alunos = new ArrayList<Aluno>();
@@ -106,6 +114,8 @@ public class PrimeiraClasseJava {
 				System.out.println("O aluno: " + aluno.getNome() + " " + aluno.getAlunoAprovado2() + " com média de: "
 						+ aluno.getMediaNota());
 			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Erro: acesso não permitido.");
 		}
 
 	}
