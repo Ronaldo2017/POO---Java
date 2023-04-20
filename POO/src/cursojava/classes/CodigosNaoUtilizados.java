@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import javax.swing.JOptionPane;
+
 public class CodigosNaoUtilizados {
 
 //	for (Aluno aluno : alunos) {
@@ -90,4 +92,22 @@ public class CodigosNaoUtilizados {
 //				System.out.println("------------------------------------------");
 //
 //			}
+	
+	/*   ARRAY ################################################
+	 * 
+	 * 
+	 * String posicoes = JOptionPane.showInputDialog("Quantas posições tem o array?");
+
+		// array sempre deve ter a quantidade definida
+		double[] notas = new double[Integer.parseInt(posicoes)];
+
+		for (int pos = 0; pos < notas.length; pos++) {
+			String valor = JOptionPane.showInputDialog("Qual o valor da posição: " + (pos + 1));
+			notas[pos] = Double.valueOf(valor);
+		}
+
+		// percorre o array
+		for (int pos = 0; pos < notas.length; pos++) {
+			System.out.println("Nota: " + (pos + 1) + " é " + notas[pos]);
+		}*/
 }

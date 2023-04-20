@@ -123,7 +123,7 @@ public class Aluno extends Pessoa {
 		double somaNota = 0.0;
 		// instancia a classe essa é a lista
 		for (Disciplina disciplina : disciplinas) {
-			somaNota += disciplina.getN();
+			somaNota += disciplina.getMediaNotas();
 		}
 		return somaNota / disciplinas.size();
 	}

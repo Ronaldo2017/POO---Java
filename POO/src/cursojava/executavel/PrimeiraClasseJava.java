@@ -64,7 +64,7 @@ public class PrimeiraClasseJava {
 
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina(nomeDisciplina);
-						disciplina.setN(Double.valueOf(notaDisciplina));
+//						disciplina.setN(Double.valueOf(notaDisciplina));
 
 						aluno1.getDisciplinas().add(disciplina);
 					}
@@ -76,7 +76,7 @@ public class PrimeiraClasseJava {
 						int posicao = 1;
 						while (continuarRemover == 0) {
 							String removerDisciplina = JOptionPane.showInputDialog("Qual disciplina 1, 2, 3 ou 4 ?");
-							aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - posicao);
+							System.out.println( aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - posicao));
 							posicao++;
 
 							continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover ?");
@@ -135,8 +135,8 @@ public class PrimeiraClasseJava {
 
 	public static void lerArquivo() throws FileNotFoundException {
 
-		File fil = new File("c://lines.txt");
-		Scanner scanner = new Scanner(fil);
+//		File fil = new File("c://lines.txt");
+//		Scanner scanner = new Scanner(fil);
 
 	}
 
