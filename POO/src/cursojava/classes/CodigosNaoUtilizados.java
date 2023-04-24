@@ -110,4 +110,58 @@ public class CodigosNaoUtilizados {
 		for (int pos = 0; pos < notas.length; pos++) {
 			System.out.println("Nota: " + (pos + 1) + " é " + notas[pos]);
 		}*/
+	
+	
+	//THREADS
+//	Thread threadEmail = new Thread(thread1);
+//	threadEmail.start();
+//
+//	// processa em paralelo
+//	Thread threadNFCE = new Thread(thread2);
+//	threadNFCE.start();
+//
+//	System.out.println("Fim do teste do thread");
+//	JOptionPane.showMessageDialog(null, "Thread rodando no em segundo plano!");
+//
+//}
+
+//public static Runnable thread1 = new Runnable() {
+//
+//	@Override
+//	public void run() {
+//
+//		// rotina que vai processar em paralelo
+//		for (int pos = 0; pos < 10; pos++) {
+//
+//			// executa o envio com o tempo de parada/determinado
+//			System.out.println("Executando uma rotina ex.: envio por e-mail");
+//			try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+//
+//};
+
+//public static Runnable thread2 = new Runnable() {
+//
+//	@Override
+//	public void run() {
+//		// rotina que vai processar em paralelo
+//		for (int pos = 0; pos < 10; pos++) {
+//
+//			// executa o envio com o tempo de parada/determinado
+//			System.out.println("Executando uma rotina ex.: envio de nota fiscal");
+//			try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+//};
+
 }
