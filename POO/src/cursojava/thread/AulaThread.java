@@ -4,7 +4,8 @@ public class AulaThread {
 
 	public static void main(String[] args) {
 		
-		TelaTimeThread telaTimeThread = new TelaTimeThread();
+//		TelaTimeThread telaTimeThread = new TelaTimeThread();
+		ImplementandoThread implementandoThread = new ImplementandoThread();
 		
 
 	}
